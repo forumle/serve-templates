@@ -32,19 +32,19 @@
     </div>
     <h1>Forumle</h1>
     <footer>By <a href="https://savirsingh.github.io">Savir</a></footer><br>
-    <p>Welcome, <a href="https://forumle.guessoword.com/user/{{current_user.username}}">{{current_user.username}}</a>.</p><br><br>
-    <a href="https://forumle.guessoword.com/create" class="boxa">Create Forum/Room</a><br><br><br>
-    <a style="font-size: 16px" href="https://forumle.guessoword.com/edit-profile" class="boxa">Edit Profile</a><br><br><br>
-    <a style="font-size: 16px" href="https://forumle.guessoword.com/logout" class="boxa">Logout</a><br><br><br>
+    <p>Welcome, <a href="/user/{{current_user.username}}">{{current_user.username}}</a>.</p><br><br>
+    <a href="/create" class="boxa">Create Forum/Room</a><br><br><br>
+    <a style="font-size: 16px" href="/edit-profile" class="boxa">Edit Profile</a><br><br><br>
+    <a style="font-size: 16px" href="/logout" class="boxa">Logout</a><br><br><br>
     <hr width="60%">
     <h2>My Forums/Rooms</h2>
     {% for room in mine %}
-    <a style="font-size: 18px" href="https://forumle.guessoword.com/room/{{room.code}}" class="boxa">{{room.name}}</a><br><br><br>
+    <a style="font-size: 18px" href="/room/{{room.code}}" class="boxa">{{room.name}}</a><br><br><br>
     {% endfor %}
     <hr width="60%">
     <h2>Top Forums/Rooms</h2>
     {% for i in range(top|length) %}
-    <a style="font-size: 18px" href="https://forumle.guessoword.com/room/{{codes[i]}}" class="boxa">{{top[i]}}</a><br><br><br>
+    <a style="font-size: 18px" href="/room/{{codes[i]}}" class="boxa">{{top[i]}}</a><br><br><br>
     {% endfor %}
     <p>&copy 2023 <a href="https://savirsingh.github.io">Savir Singh</a>.</p>
   </body></center>
