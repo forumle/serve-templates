@@ -32,7 +32,7 @@
     </div>
     <h1>{{room.name}} | Forumle</h1>
     <h5>{{room.contrib}} participants</h5>
-    <h5>Owner: <b><a style="color: black" target="_blank" href="https://forumle.guessoword.com/user/{{usernames[i]}}">{{usernames[i]}}:</a></b></h5><br>
+    <h5>Owner: <b><a style="color: black" target="_blank" href="https://forumle.guessoword.com/user/{{room.owner}}">{{room.owner}}:</a></b></h5><br>
     <input style="width: 40%" width="40%" type="text" value="https://forumle.guessoword.com/room/{{room.code}}" id="clipBoard"><br>
     <button type="submit" onclick="copyBoard()">Copy Room URL</button><br>
     <script>
