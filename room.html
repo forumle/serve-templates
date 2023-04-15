@@ -32,19 +32,7 @@
     </div>
     <h1>{{room.name}} | Forumle</h1>
     <h5>{{room.contrib}} participants |
-    Owner: <b><a style="color: black" target="_blank" href="/user/{{room.owner}}">{{room.owner}}:</a></b></h5><br>
-    <input style="width: 40%" width="40%" type="text" value="/room/{{room.code}}" id="clipBoard"><br>
-    <button onclick="copyBoard()">Copy Room URL</button><br>
-    <script>
-function copyBoard() {
-  var copyText = document.getElementById("clipBoard");
-
-  copyText.select();
-  copyText.setSelectionRange(0, 99999);
-  navigator.clipboard.writeText(copyText.value);
-  alert("URL Copied!");
-}
-</script>
+    Owner: <b><a style="color: black" target="_blank" href="/user/{{room.owner}}">{{room.owner}}</a></b></h5><br>
     <div id="messagebox" class="form-container" style="text-align: left; overflow-y: scroll; height: 400px; width: 64%">
       {% for i in range(cnt) %}
       <div style="border: 1px solid black; padding: 2px">
@@ -56,7 +44,19 @@ function copyBoard() {
     <form action="/room/{{room.code}}/message" method="POST">
       <input style="width: 50%" width="50%" maxlength="150" name="content" type="text" placeholder="Send a message..." required>
       <input type="submit" value="Send">
-    </form>
+    </form><br>
+        <input style="width: 40%" width="40%" type="text" value="https://forumle.pythonanywhere.com/room/{{room.code}}" id="clipBoard"><br>
+    <button type="submit" onclick="copyBoard()">Copy Room URL</button><br>
+    <script>
+function copyBoard() {
+  var copyText = document.getElementById("clipBoard");
+
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(copyText.value);
+  alert("URL Copied!");
+}
+</script>
           <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
 $(document).ready(function() {
