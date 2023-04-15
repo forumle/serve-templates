@@ -32,8 +32,11 @@
     </div>
     <h1>{{room.name}} | Forumle</h1>
     <div class="form-container" style="text-align: left; overflow-y: scroll; height: 400px; width: 64%">
-      {% for message in messages %}
-      <p>{{message}}</p>
+      {% for i in range(cnt) %}
+      <div style="border: 1px solid black; padding: 2px">
+      <p><a style="color: black" target="_blank" href="/user/usernames[i]">{{usernames[i]}}:</a></p>
+      <p>messages[i]</p>
+      </div>
       {% endfor %}
     </div>
     <form action="/room/{{room.code}}/message" method="POST">
