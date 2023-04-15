@@ -43,7 +43,23 @@
       <input style="width: 50%" width="50%" maxlength="150" name="content" type="text" placeholder="Send a message..." required>
       <input type="submit" value="Send">
     </form>
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+$(document).ready(function() {
+  setInterval(function() {
+    $.get('/getmessages/{{room.code}}', function(data) {
+      var messagesBox = $('#messagebox');
+      messagesBox.empty();
+      for (var i = 0; i < data[0].length; i++) {
+        var username = data[0][i];
+        var message = data[1][i];
+        messagesBox.append('<div style="border: 1px solid black; padding: 2px"><p><b><a style="color: black" target="_blank" href="/user/' + username + '">' + username + ':</a></b></p><p>' + message + '</p></div><br>');
+      }
+      messagesBox.scrollTop(messagesBox.prop("scrollHeight"));
+    });
+  }, 1000); // Refresh every 1 second
+});
+
       var divsi = document.getElementById("messagebox");
       divsi.scrollTop = divsi.scrollHeight;
     </script>
