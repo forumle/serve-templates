@@ -31,7 +31,7 @@
       <div class="bubble pink"></div>
     </div>
     <h1>{{room.name}} | Forumle</h1>
-    <div class="form-container" style="text-align: left; overflow-y: scroll; height: 400px; width: 64%">
+    <div id="messagebox" class="form-container" style="text-align: left; overflow-y: scroll; height: 400px; width: 64%">
       {% for i in range(cnt) %}
       <div style="border: 1px solid black; padding: 2px">
       <p><b><a style="color: black" target="_blank" href="/user/{{usernames[i]}}">{{usernames[i]}}:</a></b></p>
@@ -43,5 +43,9 @@
       <input style="width: 50%" width="50%" maxlength="150" name="content" type="text" placeholder="Send a message..." required>
       <input type="submit" value="Send">
     </form>
+    <script>
+      var divsi = document.getElementById("messagebox");
+      divsi.scrollTop = divsi.scrollHeight;
+    </script>
   </body></center>
 </html>
