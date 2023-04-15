@@ -31,14 +31,14 @@
       <div class="bubble pink"></div>
     </div>
     <h1>{{room.name}} | Forumle</h1>
-    <div style="overflow-y: scroll; height: 400px; width: 50%">
+    <div style="overflow-y: scroll; height: 400px; width: 64%">
       {% for message in messages %}
       <p>message</p>
       {% endfor %}
     </div>
     <form action="/room/{{room.code}}/message" method="POST">
       <input style="width: 50%" width="50%" maxlength="150" name="content" type="text" placeholder="Send a message..." required>
-      <button type="submit">Send</button>
+      <input type="submit" value="Send">
     </form>
   </body></center>
 </html>
