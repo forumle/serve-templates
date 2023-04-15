@@ -41,6 +41,11 @@
     {% for room in mine %}
     <a style="font-size: 18px" href="/room/{{room.code}}" class="boxa">{{room.name}}</a><br><br><br>
     {% endfor %}
+    <hr width="60%">
+    <h2>Top Forums/Rooms</h2>
+    {% for i in range(top|length) %}
+    <a style="font-size: 18px" href="/room/{{codes[i]}}" class="boxa">{{top[i]}}</a><br><br><br>
+    {% endfor %}
     <p>&copy 2023 <a href="https://savirsingh.github.io">Savir Singh</a>.</p>
   </body></center>
 </html>
