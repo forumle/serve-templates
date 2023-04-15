@@ -33,7 +33,7 @@
     <h1>{{room.name}} | Forumle</h1>
     <div style="overflow-y: scroll; height: 400px; width: 64%">
       {% for message in messages %}
-      <p>message</p>
+      <p>{{message}}</p>
       {% endfor %}
     </div>
     <form action="/room/{{room.code}}/message" method="POST">
