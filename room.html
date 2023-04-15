@@ -36,7 +36,7 @@
       <div style="border: 1px solid black; padding: 2px">
       <p><b><a style="color: black" target="_blank" href="/user/{{usernames[i]}}">{{usernames[i]}}:</a></b></p>
       <p>{{messages[i]}}</p>
-      </div>
+      </div><br>
       {% endfor %}
     </div>
     <form action="/room/{{room.code}}/message" method="POST">
