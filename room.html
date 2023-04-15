@@ -34,12 +34,12 @@
     <div id="messagebox" class="form-container" style="text-align: left; overflow-y: scroll; height: 400px; width: 64%">
       {% for i in range(cnt) %}
       <div style="border: 1px solid black; padding: 2px">
-      <p><b><a style="color: black" target="_blank" href="/user/{{usernames[i]}}">{{usernames[i]}}:</a></b></p>
+      <p><b><a style="color: black" target="_blank" href="https://forumle.guessoword.com/user/{{usernames[i]}}">{{usernames[i]}}:</a></b></p>
       <p>{{messages[i]}}</p>
       </div><br>
       {% endfor %}
     </div>
-    <form action="/room/{{room.code}}/message" method="POST">
+    <form action="https://forumle.guessoword.com/room/{{room.code}}/message" method="POST">
       <input style="width: 50%" width="50%" maxlength="150" name="content" type="text" placeholder="Send a message..." required>
       <input type="submit" value="Send">
     </form>
@@ -53,7 +53,7 @@ $(document).ready(function() {
       for (var i = 0; i < data[0].length; i++) {
         var username = data[0][i];
         var message = data[1][i];
-        messagesBox.append('<div style="border: 1px solid black; padding: 2px"><p><b><a style="color: black" target="_blank" href="/user/' + username + '">' + username + ':</a></b></p><p>' + message + '</p></div><br>');
+        messagesBox.append('<div style="border: 1px solid black; padding: 2px"><p><b><a style="color: black" target="_blank" href="https://forumle.guessoword.com/user/' + username + '">' + username + ':</a></b></p><p>' + message + '</p></div><br>');
       }
       messagesBox.scrollTop(messagesBox.prop("scrollHeight"));
     });
