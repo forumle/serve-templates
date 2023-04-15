@@ -39,7 +39,7 @@
     <hr width="60%">
     <h2>My Forums/Rooms</h2>
     {% for room in mine %}
-    <a style="font-size: 18px" href="/edit-profile" class="boxa">{{room.name}}</a><br><br><br>
+    <a style="font-size: 18px" href="/room/{{room.code}}" class="boxa">{{room.name}}</a><br><br><br>
     {% endfor %}
     <p>&copy 2023 <a href="https://savirsingh.github.io">Savir Singh</a>.</p>
   </body></center>
