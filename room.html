@@ -31,5 +31,9 @@
       <div class="bubble pink"></div>
     </div>
     <h1>Forumle</h1>
+    <form action="/room/{{room.code}}/message" method="POST">
+      <input maxlength="150" name="content" type="text" placeholder="Send a message..." required>
+      <input type="submit" value="Send">
+    </form>
   </body></center>
 </html>
