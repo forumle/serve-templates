@@ -34,7 +34,7 @@
     <h1>{{room.name}} | Forumle</h1>
     <h5>{{room.contrib}} participants |
     Owner: <b><a style="color: black" target="_blank" href="/user/{{room.owner}}">{{room.owner}}</a></b></h5>
-    <div id="messagebox" class="form-container" style="text-align: left; overflow-y: scroll; height: 400px; width: 64%">
+    <div id="messagebox" class="form-container" style="text-align: left; overflow-y: scroll; height: 320px; width: 100%">
       {% for i in range(cnt) %}
       <div style="border: 1px solid black; padding: 2px">
       <p><b><a style="color: black" target="_blank" href="/user/{{usernames[i]}}">{{usernames[i]}}:</a></b></p>
@@ -43,8 +43,10 @@
       {% endfor %}
     </div>
     <form action="/room/{{room.code}}/message" method="POST">
-      <input style="width: 50%" width="50%" maxlength="150" name="content" type="text" placeholder="Send a message..." required>
-      <input type="submit" value="Send">
+      <input style="float: right" type="submit" value="Send">
+      <div style="overflow: hidden; padding-right: .5em;">
+         <input style="width: 100%" width="100%" maxlength="150" name="content" type="text" placeholder="Send a message..." required>
+      </div>
     </form><br><br>
         <input style="width: 40%" width="40%" type="text" value="https://forumle.pythonanywhere.com/room/{{room.code}}" id="clipBoard"><br>
     <button type="submit" onclick="copyBoard()">Copy Room URL</button><br>
