@@ -13,6 +13,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <style>
+      @media only screen and (max-width: 600px) {
+  .nomobile {
+    display: none;
+  }
+}
+    </style>
   </head>
   <center><body>
     <div class="bubble-container">
@@ -48,8 +55,10 @@
          <input style="width: 100%" width="100%" maxlength="150" name="content" type="text" placeholder="Send a message..." required>
       </div>
     </form><br><br>
+    <div class="nomobile">
         <input style="width: 40%" width="40%" type="text" value="https://forumle.pythonanywhere.com/room/{{room.code}}" id="clipBoard" disabled><br>
     <button type="submit" onclick="copyBoard()">Copy Room URL</button><br>
+    </div>
     <script>
 function copyBoard() {
   var copyText = document.getElementById("clipBoard");
